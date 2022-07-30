@@ -1,6 +1,50 @@
 
 const result=document.getElementById("result");
 const btn=document.getElementById("search");
+btn.addEventListener("click",()=>{ 
+    let long;
+    let lat; 
+  
+  let city=document.getElementById("myinput").value;
+  const url=`http://api.weatherapi.com/v1/current.json?key=02c98d856846424b886232150222207&q=${city}`;
+
+//   const url2=`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=6c940af4a9ec829b48953de704db2cdb`;
+
+
+//   https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=6c940af4a9ec829b48953de704db2cdb
+    fetch(`${url}`).then((response)=> response.json()).then((data)=>{
+    
+        console.log(data);
+        result.innerHTML=
+        `
+            <div class="word">
+                <h3>${data["location"]["name"]}</h3>
+                <small>${data["location"]["country"]}</small>
+            </div>
+
+                    <div class="weather-icon"><img src="${data['current']['condition']['icon']} " alt=""></div>
+
+            <div class="result-element">
+
+            <div class="condition"><span class="title">Condition:</span><span class="cloud-result">${data["current"]["condition"]["text"]}</span></div>
+            <div class="humidity"><span class="title">Humidity:</span><span class="cloud-result">${data["current"]["humidity"]}</span></div>
+            <div class="temp"><span class="title">Temperature:</span><span class="cloud-result">${data["current"]["temp_c"]}<span>  degree celcius </span></span></div>
+            <div class="latitude"><span class="title">Latitude:</span><span class="cloud-result">${data["location"]["lat"]}</span></div>
+            <div class="longitude"><span class="title">Longitude:</span><span class="cloud-result">${data["location"]["lon"]}</span></div>
+            <div class="date-n-time"><span class="title">Local Date and Time:</span><span class="cloud-result">${data["location"]["localtime"]}</span></div>
+
+        </div>
+
+
+
+        `
+    })
+    .catch(()=>{
+        result.innerHTML=`<h4 class="error"> Couldn't Find the city, please try another city</h4>`
+    })
+})
+
+
 // let long;
 // let lat;
 // window.addEventListener('load', () => {
@@ -14,27 +58,7 @@ const btn=document.getElementById("search");
 //       });
 //     }
 //   });
-
-
-btn.addEventListener("click",()=>{  
-  
-  let city=document.getElementById("myinput").innerHTML;
-  const url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6c940af4a9ec829b48953de704db2cdb`; 
-
-
-    fetch(`${url}${city}`).then((response)=> response.json()).then((data)=>{
-        console.log(data);
-        result.innerHTML=
-        `
-            <div class="word">
-                <h3>${data[0].word}</h3>
-            </div>
-          
-        `
-    }).catch(()=>{
-        result.innerHTML=`<h4 class="error"> Couldn't Find the city, please try another city</h4>`
-    })
-})
+// https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=6c940af4a9ec829b48953de704db2cdb
 
 
   

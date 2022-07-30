@@ -53,35 +53,34 @@ h2{
     color:  #0A2640;
     margin: 0em 1em;
 }
-.word{
+.answer small{
+    color:  #0A2640;
+    padding: 2em;
+}
+.weather-icon{
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    margin: 1em;
-    padding: 0em 2em;
 }
-.details{
+.result-element{
+    padding: 2em;
+}.cloud,.condition,.humidity,.temp,.latitude,.longitude,.date-n-time{
+    margin-top: .5em;
+    font-size: 1.5rem;
     display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    color: #65E4A3;
-    font-size: 2rem;
-    margin: 0em ;
+    justify-content: space-between;
 }
-.meaning{
-    color: #0A2640;
-    font-size: 2rem;
+.title{
+    background-color: #0A2640;
+    color: white;
+    padding: .5em;
 }
-.example{
-    margin: 1em 0em;
-    font-size: 1.5em;
-    color: #0A2640;
+.cloud-result{
+    align-self: flex-end;
 }
-.word-example{
-    border-left: 0.3rem solid #65E4A3;
-    color: #65E4A3;
-    font-size: 1.5em;
-    padding-left: 1em;
-}
+
+
 .error{
     text-align: center;
     margin-top: 1em;
