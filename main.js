@@ -1,20 +1,24 @@
 
 const result=document.getElementById("result");
 const btn=document.getElementById("search");
+// function to be performed when users click the srarch button
 btn.addEventListener("click",()=>{ 
-    let long;
-    let lat; 
-  
+    
+//   get users input from the html file
   let city=document.getElementById("myinput").value;
-  const url=`http://api.weatherapi.com/v1/current.json?key=02c98d856846424b886232150222207&q=${city}`;
+
+//   url to the API
+  const url=`https://api.weatherapi.com/v1/current.json?key=02c98d856846424b886232150222207&q=${city}`;
 
 //   const url2=`https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${long}&exclude={part}&appid=6c940af4a9ec829b48953de704db2cdb`;
 
 
 //   https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=6c940af4a9ec829b48953de704db2cdb
+
     fetch(`${url}`).then((response)=> response.json()).then((data)=>{
     
         console.log(data);
+        // the below informations will be showed as response from the API
         result.innerHTML=
         `
             <div class="word">
@@ -34,11 +38,9 @@ btn.addEventListener("click",()=>{
             <div class="date-n-time"><span class="title">Local Date and Time:</span><span class="cloud-result">${data["location"]["localtime"]}</span></div>
 
         </div>
-
-
-
         `
     })
+    // to be displayed in case there is any error
     .catch(()=>{
         result.innerHTML=`<h4 class="error"> Couldn't Find the city, please try another city</h4>`
     })
