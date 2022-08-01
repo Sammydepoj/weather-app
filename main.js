@@ -29,7 +29,7 @@ btn.addEventListener("click",()=>{
 
             <div class="condition"><span class="title">Condition:</span><span class="cloud-result">${data["current"]["condition"]["text"]}</span></div>
             <div class="humidity"><span class="title">Humidity:</span><span class="cloud-result">${data["current"]["humidity"]}</span></div>
-            <div class="temp"><span class="title">Temperature:</span><span class="cloud-result">${data["current"]["temp_c"]}<span>  degree celcius </span></span></div>
+            <div class="temp"><span class="title">Temperature:</span><span class="cloud-result">${data["current"]["temp_c"]}<span>  &#x2103 </span></span></div>
             <div class="latitude"><span class="title">Latitude:</span><span class="cloud-result">${data["location"]["lat"]}</span></div>
             <div class="longitude"><span class="title">Longitude:</span><span class="cloud-result">${data["location"]["lon"]}</span></div>
             <div class="date-n-time"><span class="title">Local Date and Time:</span><span class="cloud-result">${data["location"]["localtime"]}</span></div>
