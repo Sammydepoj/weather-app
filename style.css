@@ -65,7 +65,8 @@ h2{
 }
 .result-element{
     padding: 2em;
-}.cloud,.condition,.humidity,.temp,.latitude,.longitude,.date-n-time{
+}
+.cloud,.condition,.humidity,.temp,.latitude,.longitude,.date-n-time{
     margin-top: .5em;
     font-size: 1.5rem;
     display: flex;
@@ -87,7 +88,7 @@ h2{
     border: 0.05em solid red;
     font-size: 1rem;
 }
-
+/* For screens 600px screen resolution */
 @media screen and (max-width:600px){
 
     .container{
@@ -108,4 +109,43 @@ h2{
         font-size: 1rem;
         margin: 0em ;
     }
+    .cloud,.condition,.humidity,.temp,.latitude,.longitude,.date-n-time{
+        margin-top: .5em;
+        font-size: 1rem;
+    }
 }
+/* For screens 900px screen resolution */
+@media screen and (max-width:900px){
+    .container{
+        width: 90%;
+    }
+
+    .cloud,.condition,.humidity,.temp,.latitude,.longitude,.date-n-time{
+        margin-top: .5em;
+        font-size: 1.3rem;
+        margin-right: 2em;
+    }
+
+}
+/* For screens 1200px screen resolution */
+
+@media screen and (max-width:1200px){
+    .container{
+        width: 90%;
+    }
+
+}
+
+
+/* For screens 325px screen resolution and above */
+
+@media screen and (min-width:325px){
+    .container{
+        width: 90%;
+    }
+    .answer{
+        width: 100%;
+    }
+
+}
+
