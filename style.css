@@ -1,151 +1,165 @@
-
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background: #0A2640;
+
+body {
+    background: #0a2640;
 }
-h2{
+
+h2 {
     text-align: center;
     color: white;
     font-weight: bolder;
     font-size: 3rem;
 }
-.container{
+
+.container {
     background-color: white;
     margin: 1rem auto;
     width: 60%;
     border-radius: 2rem;
     padding: 2rem;
 }
-.input-word{
+
+.input-word {
     display: flex;
     width: 100%;
     justify-content: space-between;
 }
-.input-word input{
+
+.input-word input {
     padding: 1em 0em 0em;
     border: none;
     width: 70%;
     outline: none;
     font-size: 1.1rem;
-    border-bottom: .3rem solid #0A2640;
+    border-bottom: 0.3rem solid #0a2640;
 }
-.input-word button{
+
+.input-word button {
     width: 25%;
-    background:linear-gradient(0deg,#0A2640 50%, #65E4A3 100%) ;
+    background: linear-gradient(0deg, #0a2640 50%, #65e4a3 100%);
     font-weight: bolder;
     border: none;
     border-radius: 1em;
     color: white;
     cursor: pointer;
 }
-.input-word button:hover{
-    background:linear-gradient(90deg, #0A2640 50%, #65E4A3 100%) ;
+
+.input-word button:hover {
+    background: linear-gradient(90deg, #0a2640 50%, #65e4a3 100%);
 }
-.answer{
+
+.answer {
     position: relative;
 }
-.answer h3{
+
+.answer h3 {
     font-size: 2.5rem;
-    color:  #0A2640;
+    color: #0a2640;
     margin: 0em 1em;
 }
-.answer small{
-    color:  #0A2640;
+
+.answer small {
+    color: #0a2640;
     padding: 2em;
 }
-.weather-icon{
+
+.weather-icon {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
 }
-.result-element{
+
+.result-element {
     padding: 2em;
 }
-.cloud,.condition,.humidity,.temp,.latitude,.longitude,.date-n-time{
-    margin-top: .5em;
+
+.cloud,
+.condition,
+.humidity,
+.temp,
+.latitude,
+.longitude,
+.date-n-time {
+    margin-top: 0.5em;
     font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
 }
-.title{
-    background-color: #0A2640;
+
+.title {
+    background-color: #0a2640;
     color: white;
-    padding: .5em;
+    padding: 0.5em;
 }
-.cloud-result{
+
+.cloud-result {
     align-self: flex-end;
 }
 
-
-.error{
+.error {
     text-align: center;
     margin-top: 1em;
     border: 0.05em solid red;
     font-size: 1rem;
 }
-/* For screens 600px screen resolution */
-@media screen and (max-width:600px){
 
-    .container{
-        width: 90%;
-    }
-    .input-word button{
-       padding:0.1rem 0.5rem;
-    }   
-    .meaning{
-        font-size: 1.5rem;
-        margin: 0em;
-    }
-    .details{
-        display: flex;
-        justify-content: space-around;
-        gap: 3rem;
-        color: #65E4A3;
-        font-size: 1rem;
-        margin: 0em ;
-    }
-    .cloud,.condition,.humidity,.temp,.latitude,.longitude,.date-n-time{
-        margin-top: .5em;
-        font-size: 1rem;
-    }
-}
 /* For screens 900px screen resolution */
-@media screen and (max-width:900px){
-    .container{
+@media screen and (max-width: 900px) {
+    .container {
         width: 90%;
     }
 
-    .cloud,.condition,.humidity,.temp,.latitude,.longitude,.date-n-time{
-        margin-top: .5em;
+    .cloud,
+    .condition,
+    .humidity,
+    .temp,
+    .latitude,
+    .longitude,
+    .date-n-time {
+        margin-top: 0.5em;
         font-size: 1.3rem;
         margin-right: 2em;
     }
-
 }
+
 /* For screens 1200px screen resolution */
 
-@media screen and (max-width:1200px){
-    .container{
+@media screen and (max-width: 1200px) {
+    .container {
         width: 90%;
     }
-
 }
 
+/* For screens 600px screen resolution and below */
 
-/* For screens 325px screen resolution and above */
-
-@media screen and (min-width:325px){
-    .container{
+@media screen and (max-width: 600px) {
+    .container {
         width: 90%;
+        padding: 0.5em;
     }
-    .answer{
+
+    .answer {
         width: 100%;
     }
 
-}
+    .result-element {
+        padding: 0em;
+    }
 
+    .cloud,
+    .condition,
+    .humidity,
+    .temp,
+    .latitude,
+    .longitude,
+    .date-n-time {
+        margin-right: 2em;
+        font-size: 1rem;
+        border-bottom: 0.2em solid #65e4a3;
+    }
+}

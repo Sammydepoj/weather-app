@@ -1,29 +1,25 @@
-
-const result=document.getElementById("result");
-const btn=document.getElementById("search");
+const result = document.getElementById("result");
+const btn = document.getElementById("search");
 // function to be performed when users click the srarch button
-btn.addEventListener("click",()=>{ 
-    
-//   get users input from the html file
-  let city=document.getElementById("myinput").value;
+btn.addEventListener("click", () => {
+  //   get users input from the html file
+  let city = document.getElementById("myinput").value;
 
-//   url to the API
-  const url=`https://api.weatherapi.com/v1/current.json?key=02c98d856846424b886232150222207&q=${city}`;
+  //   url to the API
+  const url = `https://api.weatherapi.com/v1/current.json?key=02c98d856846424b886232150222207&q=${city}`;
 
-
-
-    fetch(`${url}`).then((response)=> response.json()).then((data)=>{
-    
-        console.log(data);
-        // the below informations will be showed as response from the API
-        result.innerHTML=
-        `
+  fetch(`${url}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      // the below informations will be showed as response from the API
+      result.innerHTML = `
             <div class="word">
                 <h3>${data["location"]["name"]}</h3>
                 <small>${data["location"]["country"]}</small>
             </div>
 
-                    <div class="weather-icon"><img src="${data['current']['condition']['icon']} " alt=""></div>
+                    <div class="weather-icon"><img src="${data["current"]["condition"]["icon"]} " alt=""></div>
 
             <div class="result-element">
 
@@ -35,12 +31,10 @@ btn.addEventListener("click",()=>{
             <div class="date-n-time"><span class="title">Local Date and Time:</span><span class="cloud-result">${data["location"]["localtime"]}</span></div>
 
         </div>
-        `
+        `;
     })
     // to be displayed in case there is any error
-    .catch(()=>{
-        result.innerHTML=`<h4 class="error"> Couldn't Find the city, please try another city</h4>`
-    })
-})
-
-
+    .catch(() => {
+      result.innerHTML = `<h4 class="error"> Couldn't Find the city, please try another city</h4>`;
+    });
+});
